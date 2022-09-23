@@ -39,6 +39,8 @@ namespace HackarthonApp
             string date = (artworkNode["data"]!["attributes"]!["Audiodescription"]!).ToString();
             Console.WriteLine($" -audiodescription={audiodescription}");
             */
+
+            //and so on...
         }
 
         public static void DeserializeEuropeana(string jsonString)

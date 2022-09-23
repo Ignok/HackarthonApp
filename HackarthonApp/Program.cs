@@ -42,7 +42,7 @@ namespace HackarthonApp
             try
             {
                 // Get the artwork with given id
-                Console.WriteLine("Searching info about artwork id: " + id);
+                Console.WriteLine("Searching info about artwork id: " + id + " in Zacheta...");
                 string? data = await GetArtworkAsync(urlZacheta + "artworks/" + id);
                 if (data != null)
                 {
@@ -66,7 +66,7 @@ namespace HackarthonApp
             client.DefaultRequestHeaders.Add("Authorization", "Bearer " + zachetaKey);
             try
             {
-                //Get information about artwork with string "Osvald Helmuth dressed as Mona Lisa" in title
+                //Get information about artwork with given string in the title
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + europeanaKey);
                 Console.WriteLine("Searching for an art piece called: \"Osvald Helmuth dressed as Mona Lisa\" in Europeana...");
