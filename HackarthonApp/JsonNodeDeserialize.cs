@@ -20,7 +20,7 @@ namespace HackarthonApp
 
             JsonNode data = artworkNode!["data"]!;
             Console.WriteLine($"Type={data.GetType()}");
-            Console.WriteLine($"JSON={data.ToJsonString()}");
+            //Console.WriteLine($"JSON={data.ToJsonString()}");
 
             string id = (artworkNode["data"]!["id"]!).ToString();
             Console.WriteLine($"data.id={id}");
@@ -29,9 +29,14 @@ namespace HackarthonApp
             Console.WriteLine($"data.type={type}");
 
             string att = (artworkNode["data"]!["attributes"]!).ToString();
-            Console.WriteLine($"data.attributes={att}");
+            //Console.WriteLine($"data.attributes={att}");
 
-            string title = (artworkNode["data"]!["attributes"]!["title"]!["title"]!).ToString();
+            string date = (artworkNode["data"]!["attributes"]!["Date"]!).ToString();
+            Console.WriteLine($"data.attributes={date}");
+
+            JsonNode titles = (artworkNode["data"]!["attributes"]!["Title"]!);
+            JsonNode firstTitle = titles[0]!;
+            string title = firstTitle["Title"]!.ToString();
             Console.WriteLine($"data.attributes.title.title={title}");
 
             //int idInt = (int)artworkNode!["Id"]!;
