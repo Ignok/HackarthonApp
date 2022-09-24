@@ -20,7 +20,7 @@ namespace HackarthonApp
 
         static void Main(string[] args)
         {
-            RunAsyncZacheta().GetAwaiter().GetResult();
+            RunAsync().GetAwaiter().GetResult();
         }
 
         private static string urlZacheta = "https://apihackaton.zacheta.art.pl/api/v1/";
@@ -32,7 +32,7 @@ namespace HackarthonApp
         private static string id = "7";
         private static string searchedTitle = "\"Osvald%20Helmuth%20dressed%20as%20Mona%20Lisa\"";
 
-        static async Task RunAsyncZacheta()
+        static async Task RunAsync()
         {
             client.BaseAddress = new Uri(urlZacheta);
             client.DefaultRequestHeaders.Accept.Clear();
@@ -53,7 +53,7 @@ namespace HackarthonApp
                 {
                     Console.WriteLine("Error: Artwork with given id doesn't exist");
                 }
-                //mając dostep do konkretnych atrybutów można już filtrować itd.
+                //with access to specific attributes we can easily filter and search for desired artworks
             }
             catch (Exception e)
             {
